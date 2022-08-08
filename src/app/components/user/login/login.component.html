@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center titulo">Login</h2>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <input formControlName="email" class="form-control form-control-lg" type="text" placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                            <input formControlName="password" class="form-control form-control-lg" type="text" placeholder="Contraseña">
+                        </div>
+                        <button class="btn btn-secondary btn-lg">Regresar</button>
+                        <button type="submit" class="btn btn-primary btn-lg float-end">Ingresar</button>
+                    </form>
+                    <br>
+                    <div class="text-center">
+                        <a href="#">Registrarme</a>
+                        <br>
+                        <a href="#">Recuperar Contraseña</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
