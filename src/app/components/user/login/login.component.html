@@ -7,18 +7,27 @@
                     <form [formGroup]="loginForm" (ngSubmit)="login()">
                         <div class="mb-3">
                             <input formControlName="email" class="form-control form-control-lg" type="text" placeholder="Email">
+                       <span class="text-danger" *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+                        El email <strong>es requerido</strong>
+                       </span>
+                       <span class="text-danger" *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">
+                        El email <strong>es invalido</strong>
+                       </span>
                         </div>
                         <div class="mb-3">
-                            <input formControlName="password" class="form-control form-control-lg" type="text" placeholder="Contraseña">
+                            <input formControlName="password" class="form-control form-control-lg" type="password" placeholder="Contraseña">
+                        <span class="text-danger" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+                        La contraseña <strong>es requerida</strong>
+                        </span>
                         </div>
                         <button class="btn btn-secondary btn-lg">Regresar</button>
-                        <button type="submit" class="btn btn-primary btn-lg float-end">Ingresar</button>
+                        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-lg float-end">Ingresar</button>
                     </form>
                     <br>
                     <div class="text-center">
-                        <a href="#">Registrarme</a>
+                        <a routerLink="/user/register">Registrarme</a>
                         <br>
-                        <a href="#">Recuperar Contraseña</a>
+                        <a routerLink="/user/forgetPassword">Recuperar Contraseña</a>
                     </div>
                 </div>
             </div>
