@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "appquiz-8406f"
+  },
+  "targets": {
+    "appquiz-8406f": {
+      "hosting": {
+        "Quizz": [
+          "appquiz-8406f"
+        ]
+      }
+    }
+  }
+}

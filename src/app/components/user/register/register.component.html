@@ -1,5 +1,8 @@
 <div class="container mt-5">
-    <div class="row">
+    <div *ngIf="loading" class="d-flex justify-content-center mt-5">
+        <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!loading" class="row">
         <div class="col-lg-6 offset-lg-3">
             <div class="card">
                 <div class="card-body">
@@ -15,7 +18,7 @@
                         </span>
                         </div> 
                         <div class="mb-3">
-                         <input type="text" formControlName="password" class="form-control form-control-lg" placeholder="Contraseña">
+                         <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Contraseña">
                          <span class="text-danger" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
                             La contraseña <strong> es requerida</strong>
                         </span>
@@ -24,7 +27,7 @@
                         </span>
                         </div> 
                         <div class="mb-3">
-                         <input type="text" formControlName="password2" class="form-control form-control-lg" placeholder="Repetir Contraseña">
+                         <input type="password" formControlName="password2" class="form-control form-control-lg" placeholder="Repetir Contraseña">
                          <span class="text-danger" *ngIf="registerForm.hasError('notSame')">
                             Contraseñas <strong>Distintas</strong>
                         </span>
