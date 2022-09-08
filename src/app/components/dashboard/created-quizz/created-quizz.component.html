@@ -1,0 +1,34 @@
+<div *ngIf="showError" class="alert alert-danger text-center" role="alert">
+    Por favor ingrese todos los campos
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+    <div class="card card-titulo">
+        <div class="card-body text-center">
+            <h4 class="titulo">Ingrese los datos del cuestionario</h4>
+        </div>
+    </div>  
+</div>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="questionaryForm">
+                        <div class="form-group mb-3">
+                            <input type="text" formControlName="title" class="form-control form-control-lg input" placeholder="Titulo">
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea rows="3" formControlName="description" class="form-control form-control-lg input" placeholder="Descripción"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-12">
+                    <button (click)="follow()" style="width: 100%;" class="btn-principal">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

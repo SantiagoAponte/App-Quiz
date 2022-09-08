@@ -44,23 +44,6 @@ loading = false;
     })
   }
 
-  // error(code:string): string {
-  //   switch(code){
-  //     //Email registrado en BD
-  //     case 'auth/email-already-in-use':
-  //     return 'El correo ya esta registrado';
-
-  //     case 'auth/invalid-email':
-  //       return 'El Correo es invalido';
-
-  //     case 'auth/weak-password':
-  //       return 'Al menos debe tener 6 caracteres la contraseña';
-
-  //     default :
-  //     return 'Error desconocido';
-  //   }
-  // }
-
   checkPassword(group: FormGroup): any {
     const pass = group.controls.password?.value;
     const confirmPassword = group.controls.password2?.value;
